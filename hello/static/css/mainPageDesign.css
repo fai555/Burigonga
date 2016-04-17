@@ -99,19 +99,19 @@ nav,footer,section{
     transform: scale(1.2);
 }
 
-
+/*
 #curve_chart {
-    /*position: absolute;*/
+    position: absolute;
     padding-left: 8%;
-    /*top:25%;
+    top:25%;
     width:60%;
-    height:35%;*/
+    height:35%;
 
 }
-
+*/
 
 #curve_chart{
-	padding-left: 8%;
+	/*padding-left: 16%;*/
 	/*padding-top: 2%;*/
 };
 
