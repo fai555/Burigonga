@@ -1,0 +1,45 @@
+{% load static %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="/static/js/login.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/headDesigner.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/loginDesign.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/prefixfree.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<div id="parent_div">
+		<div id="main_body_div">
+			<div id="floor_div">
+				<section id="play_section">
+					<img id="main_background" src="/static/img/background_original.jpg">
+				</section>
+			</div>
+
+			<div class="login">
+        <form action = "/accounts/auth/" method = "post"> 
+        			{% csrf_token %}
+    				<input type="text" placeholder="username" name="username"><br>
+    				<input type="password" placeholder="password" name="password"><br>
+    				<input type="submit" class="btn btn-primary " value="Login">
+        </form>
+
+        <form action = "/accounts/register/"> 
+        			{% csrf_token %}
+    				<input type="submit" class="btn btn-primary " value="SignUp">
+        </form>
+			
+
+
+			</div>
+			
+			
+		</div>
+	</div>
+
+</body>
+</html>

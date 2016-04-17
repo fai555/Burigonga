@@ -1,0 +1,55 @@
+google.charts.load('current', {'packages':['corechart']});
+/*google.load('visualization','1.0',{'packages':['corechart']});*/
+google.charts.setOnLoadCallback(drawChart);
+
+function resizeCharts () {
+    // redraw charts, dashboards, etc here
+    //chart.draw(data, options);
+    drawChart();
+}
+if (window.addEventListener) {
+    window.addEventListener('resize', resizeCharts);
+}
+else if (window.attachEvent) {
+    window.attachEvent('onresize', resizeCharts);
+}
+else {
+    window.onresize = resizeCharts;
+}
+
+
+
+
+
+      function drawChart() {
+        /*var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);*/
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Task');
+        data.addColumn('number', 'Hours per Day');
+        data.addRows([
+          ['Work', 13],
+          ['Eat', 2],
+          ['Commute', 2],
+          ['Watch TV', 2],
+          ['Sleep', {v:7, f:'7.000'}]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          pointShape:  'circle',
+          pointSize: 7
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
